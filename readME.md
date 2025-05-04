@@ -1,70 +1,97 @@
+# Who Unfollowed Me? 😈
 
-# Instagram Followers/Following Analyzer
+Sick of mystery unfollowers ruining your day?  
+This tool helps you hunt down who’s not returning the love.  
+Just grab your Instagram data, follow the steps, and find out who ditched you!
 
-This tool helps you find out who you follow but who doesn't follow you back on Instagram.  
-It uses the **Download Your Information** feature of Instagram and processes the data to generate results.
+---
 
-## 🔧 How It Works
+## 🚀 What This Tool Can Do
 
-1. **Request Your Data from Instagram**
-    - Open the **Instagram app**.
-    - Go to **Settings > Your Activity > Download your information**.
-    - Select your profile.
-    - Under "Some information," scroll down and select:
-        - ✅ *Followers and Following*
-    - Change the **date range** to *All time*.
-    - Choose **HTML** format.
-    - Submit the request.
+- Reveal which *traitors* (a.k.a. accounts you follow) don’t follow you back.
+- Spot people **you** forgot to follow back (oops).
+- Create easy-to-read reports.
+- Track how your follower drama changes over time.
 
-2. **Wait for Instagram’s Email**
-    - Instagram will send you a **ZIP file** with your data.
-    - This may take anywhere from a few minutes to several hours.
+---
 
-3. **Extract the Data**
-    - Download the ZIP file from your email.
-    - Extract it into a folder called `data_of_instagram`.
+## 📥 Before You Start — Get Your Data
 
-4. **Install Python Requirements**
-    - Make sure **Python 3.x** is installed.
-    - Install the required Python packages:
-      ```bash
-      pip install beautifulsoup4
-      ```
+Instagram doesn’t let apps grab your followers list anymore (thanks, privacy policies 😒).  
+But don’t worry, it gives **you** your data — you just have to ask nicely.
 
-5. **Run the Script**
-    - Place `main.py` in the same directory as the `data_of_instagram` folder.
-    - Open a terminal and run:
-      ```bash
-      python main.py
-      ```
-    - The script will analyze your followers and following lists.
+**Steps to get your data:**
 
-6. **See the Results**
-    - The script will display or save a list of users you follow who **don’t follow you back**.
+1. Open the **Instagram app**.
+2. Go to **Settings > Your Activity > Download your information**.
+3. Select:
+   - ✅ *Followers and Following*
+4. Set the **date range** to *All time* (we want the full story).
+5. Choose **HTML** format.
+6. Submit the request.
+7. Check your email for the download link. (Might take a few minutes or hours — be patient!)
 
-## 📂 Folder Structure
+---
 
-```plaintext
-project/
-├── data_of_instagram/
-│   ├── followers_and_following/
-│   │   ├── followers.html
-│   │   ├── following.html
-│   └── (other files)
-├── main.py
-├── README.md
-````
+## 🗂 Set Things Up
 
-## 📝 Requirements
+1. Download the ZIP Instagram sends you.
+2. Extract it into a folder called: `data_of_instagram`.
+3. Make sure these files are inside:
+   - `followers.html` (or `followers_1.html`)
+   - `following.html`
 
-* Python 3.x
-* `beautifulsoup4` (install with `pip install beautifulsoup4`)
+*(If the script doesn’t see the `data_of_instagram` folder, it’ll try to find the files in the same directory as the script. It’s smart like that.)*
 
-## ⚠ Notes
+---
 
-* This tool works with data exported directly from Instagram for safety and privacy.
-* Be sure to handle your data carefully and delete it when you're done.
+## 🐍 Requirements
 
-## 🔒 Privacy
+- **Python 3.6 or higher** (because we’re not living in 2010).
+- Install this magic ingredient:
+  ```bash
+  pip install beautifulsoup4
+---
+## 🔥 How to Run It
 
-Your Instagram data stays local on your machine. No data is sent to any servers or third-party services.
+1. Open your terminal or command prompt.
+2. Navigate to the folder where your files and scripts are.
+3. Run:
+
+   ```bash
+   python main.py
+   ```
+4. Sit back and relax while the script:
+
+   * Converts the Instagram data into CSV files.
+   * Analyzes who’s ghosting you.
+   * Builds a beautiful report in the `reports` folder.
+
+---
+
+## 📊 What’s in the Report?
+
+Your report will tell you:
+
+* How many people you follow.
+* How many follow you back.
+* Who doesn’t follow you back (*the heartbreakers 💔*).
+* Who you don’t follow back (*the overlooked heroes 🫣*).
+* Your mutual followers (*the real ones*).
+
+---
+
+## 📝 Files in This Project
+
+* `convert_to_csv.py` — Turns Instagram HTML files into CSV.
+* `find_not_following_back.py` — Finds out who’s ignoring your follow.
+* `generate_instagram_report.py` — Creates the final report.
+* `main.py` — Runs everything so you don’t have to.
+
+---
+
+## 🛡 Privacy
+
+Your Instagram secrets never leave your computer.
+No servers. No clouds. No nosy apps. Just you and the truth.
+

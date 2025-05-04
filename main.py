@@ -2,6 +2,7 @@ import os
 import subprocess
 import sys
 import time
+from datetime import datetime
 
 def run_script(script_name):
     """Run a Python script and display its output."""
@@ -65,14 +66,25 @@ def main():
     print(f"Total time: {elapsed_time:.2f} seconds")
     print("=" * 70)
     
-    if os.path.exists("instagram_report.txt"):
-        print("\nInstagram report has been generated. Opening report...\n")
-        try:
-            # Try to open the report with the default text editor
-            os.startfile("instagram_report.txt")
-        except Exception as e:
-            print(f"Could not open report automatically: {e}")
-            print("Please open instagram_report.txt manually to view the results.")
+    # Look for the report in the reports directory
+    report_dir = "reports"
+    if os.path.exists(report_dir):
+        today_date = datetime.now().strftime('%Y-%m-%d')
+        report_file = os.path.join(report_dir, f"instagram_report_{today_date}.txt")
+        
+        if os.path.exists(report_file):
+            print(f"\nInstagram report has been generated. Opening report: {report_file}\n")
+            try:
+                # Try to open the report with the default text editor
+                os.startfile(report_file)
+            except Exception as e:
+                print(f"Could not open report automatically: {e}")
+                print(f"Please open {report_file} manually to view the results.")
+        else:
+            print(f"\nReport file not found at expected location: {report_file}")
+            print(f"Check the {report_dir} directory for the generated report.")
+    else:
+        print(f"\nReports directory not found: {report_dir}")
 
 if __name__ == "__main__":
     main() 

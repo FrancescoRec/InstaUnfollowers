@@ -5,6 +5,11 @@ import csv
 # Define data folder path
 DATA_FOLDER = "data_of_instagram"
 
+# Create data folder if it doesn't exist
+if not os.path.exists(DATA_FOLDER):
+    os.makedirs(DATA_FOLDER)
+    print(f"Created data folder: {DATA_FOLDER}")
+
 def parse_instagram_html(html_file):
     # Read the HTML file
     with open(html_file, 'r', encoding='utf-8') as file:
@@ -57,6 +62,27 @@ def save_as_csv(data, output_file):
     print(f"CSV data saved to {output_file}")
 
 def main():
+    # Check if HTML files exist in root directory first
+    root_html_files = [
+        'following.html',
+        'followers_1.html'
+    ]
+    
+    for html_file in root_html_files:
+        if os.path.exists(html_file):
+            # If file exists in root directory, copy it to data folder
+            target_file = os.path.join(DATA_FOLDER, html_file)
+            try:
+                with open(html_file, 'r', encoding='utf-8') as src_file:
+                    content = src_file.read()
+                
+                with open(target_file, 'w', encoding='utf-8') as dest_file:
+                    dest_file.write(content)
+                
+                print(f"Copied {html_file} to {target_file}")
+            except Exception as e:
+                print(f"Error copying {html_file}: {e}")
+    
     # List of HTML files to process
     html_files = [
         'following.html',

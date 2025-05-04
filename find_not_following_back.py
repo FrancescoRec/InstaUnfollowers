@@ -4,6 +4,11 @@ import os
 # Define data folder path
 DATA_FOLDER = "data_of_instagram"
 
+# Create data folder if it doesn't exist
+if not os.path.exists(DATA_FOLDER):
+    os.makedirs(DATA_FOLDER)
+    print(f"Created data folder: {DATA_FOLDER}")
+
 def load_usernames_from_csv(csv_file):
     """Load usernames from a CSV file into a set."""
     usernames = set()

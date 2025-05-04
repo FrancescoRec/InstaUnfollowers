@@ -49,10 +49,32 @@ But don’t worry, it gives **you** your data — you just have to ask nicely.
 
 - **Python 3.6 or higher** (because we’re not living in 2010).
 - Install this magic ingredient:
-  ```bash
-  pip install beautifulsoup4
----
+
+   ```bash
+   python instaunfollower.py
+   ```
+
 ## 🔥 How to Run It
+
+You’ve got two ways to catch your unfollowers:
+
+### 🖥 Recommended: Use the GUI (No coding needed!)
+
+1. Run the graphical app:
+
+   ```bash
+   python instaunfollower.py
+   ```
+
+2. A window will open where you can:
+
+   * Import your `followers.html` and `following.html` files.
+   * Choose where to save your report.
+   * Click **Generate Report** and let the magic happen!
+
+### 🐍 Advanced: Run from the command line
+
+If you prefer the old-school method:
 
 1. Open your terminal or command prompt.
 2. Navigate to the folder where your files and scripts are.
@@ -61,13 +83,12 @@ But don’t worry, it gives **you** your data — you just have to ask nicely.
    ```bash
    python main.py
    ```
-4. Sit back and relax while the script:
 
-   * Converts the Instagram data into CSV files.
-   * Analyzes who’s ghosting you.
-   * Builds a beautiful report in the `reports` folder.
+This will:
 
----
+* Convert the Instagram data into CSV files.
+* Analyze who’s ghosting you.
+* Build a beautiful report in the `reports` folder.
 
 ## 📊 What’s in the Report?
 
